@@ -3,6 +3,7 @@ export default function Application({ loading }: { loading: boolean }) {
     <>
       <h1>Job application form</h1>
       <h2>Section 1</h2>
+      <p>All fields are mandatory</p>
       {!loading && (
         <form>
           <div>
@@ -15,7 +16,7 @@ export default function Application({ loading }: { loading: boolean }) {
           </div>
           <div>
             <label htmlFor="job-location">Job location</label>
-            <select name="" id="job-locatino">
+            <select name="" id="job-location">
               <option value="">Select a country</option>
               <option value="US">United States</option>
               <option value="GB">United kingdom</option>

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { logRoles, render, screen } from "@testing-library/react";
 import Application from "./Application";
 
 describe("Application", () => {
@@ -14,9 +14,21 @@ describe("Application", () => {
       expect(heading2).toBeInTheDocument();
     });
 
+    it("should have render a paragraph", () => {
+      render(<Application loading={false} />);
+      const p1 = screen.getByText(/mandatory/);
+      const p2 = screen.getByText("mandatory", { exact: false });
+      const p3 = screen.getByText((content) => content.includes("mandatory"));
+      expect(p1).toBeInTheDocument();
+      expect(p2).toBeInTheDocument();
+      expect(p3).toBeInTheDocument();
+    });
+
     it("should not render the form", () => {
+      // screen.debug()
       render(<Application loading={true} />);
-      const form = document.createElement("form")
+      // screen.debug()
+      const form = screen.queryByRole("form");
       expect(form).not.toBeInTheDocument();
     });
 
@@ -45,7 +57,9 @@ describe("Application", () => {
     });
 
     it("should have rendered a button", () => {
-      render(<Application loading={false} />);
+      const view = render(<Application loading={false} />);
+      // permite a visualização dos elementos da arvore DOM classificados por roles
+      logRoles(view.container); 
       const button = screen.getByRole("button");
       expect(button).toBeInTheDocument();
     });
