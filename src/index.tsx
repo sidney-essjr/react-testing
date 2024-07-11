@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Application from "./components/application/Application";
+import Counter from "./components/counter/Counter";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Application loading={false} />
+    <Counter />
   </React.StrictMode>
 );
 
