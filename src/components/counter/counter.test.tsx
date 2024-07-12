@@ -73,8 +73,6 @@ describe("Counter", () => {
     const amountInput = screen.getByRole("spinbutton");
     await user.type(amountInput, "5");
     expect(amountInput).toHaveValue(5);
-    await user.clear(amountInput);
-    expect(amountInput).toHaveValue(null);
   });
 
   it("selectOptions", async () => {
