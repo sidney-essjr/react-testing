@@ -16,12 +16,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --coverage --watchAll"
+    "coverage": "react-scripts test --coverage --watchAll",
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:jest-dom/recommended"
     ]
   },
   "browserslist": {
@@ -45,8 +49,12 @@
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "eslint-plugin-jest-dom": "^5.4.0",
     "jest": "^27.5.1",
-    "typescript": "^5.5.3"
+    "msw": "^2.3.1",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3",
+    "husky": "^8.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -60,6 +68,9 @@
         "lines": 80,
         "statements": -10
       }
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(@bundled-es-modules)/)"
+    ]
   }
 }

@@ -10,7 +10,7 @@ const theme = createTheme({
 
 export default function AppProviders({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider theme={theme }>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       {children}
     </ThemeProvider>

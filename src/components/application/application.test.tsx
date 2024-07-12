@@ -59,7 +59,7 @@ describe("Application", () => {
     it("should have rendered a button", () => {
       const view = render(<Application loading={false} />);
       // permite a visualização dos elementos da arvore DOM classificados por roles
-      logRoles(view.container); 
+      logRoles(view.container);
       const button = screen.getByRole("button");
       expect(button).toBeInTheDocument();
     });

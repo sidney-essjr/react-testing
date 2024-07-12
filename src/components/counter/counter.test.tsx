@@ -83,7 +83,7 @@ describe("Counter", () => {
         <option value="1">A</option>
         <option value="2">B</option>
         <option value="3">C</option>
-      </select>
+      </select>,
     );
 
     const select = screen.getByRole("listbox");
@@ -109,7 +109,7 @@ describe("Counter", () => {
       <div>
         <label htmlFor="file-upload">Upload file:</label>
         <input id="file-upload" type="file" />
-      </div>
+      </div>,
     );
 
     const file = new File(["hello"], "hello.png", { type: "image/png" });
@@ -119,6 +119,5 @@ describe("Counter", () => {
     expect(input.files).toHaveLength(1);
   });
 
-// user.keyboard('{Shift>}A{/Shift}')se traduz em Shift(down), A, Shift(up)
-
+  // user.keyboard('{Shift>}A{/Shift}')se traduz em Shift(down), A, Shift(up)
 });

@@ -17,7 +17,7 @@ describe("Counter Two", () => {
         count={0}
         handleDecrement={handleDecrement}
         handleIncrement={handleIncrement}
-      />
+      />,
     );
     const incrementButton = screen.getByRole("button", { name: /increment/i });
     const decrementButton = screen.getByRole("button", { name: /decrement/i });
