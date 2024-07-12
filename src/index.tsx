@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Counter from "./components/counter/Counter";
+import MuiMode from "./components/mui/MuiMode";
 import "./index.css";
+import AppProviders from "./providers/app-providers";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -9,7 +11,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Counter />
+    <AppProviders>
+      <div className="App">
+        <Counter />
+        <MuiMode />
+      </div>
+    </AppProviders>
   </React.StrictMode>
 );
 
